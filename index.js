@@ -10,21 +10,21 @@ app.get("/", (req, res, next) => {
   res.send("<h1>Hello world<h1>");
 });
 app.post("/", (req, res, next) => {
-	
-  res.json({data:req.body,message:"get successful"});
-  res.end()
-})
+  res.json({ data: req.body, message: "get successful" });
+  res.end();
+});
 app.get("/:anand", (req, res, next) => {
-	if( req.params.anand=="pankaj"){
-
-		res.send(`Hello pagle u r mad!`);
-		res.end()
-	}
-	else{
-		res.send(`Hello ${req.params.anand}!`);
-		res.end()
-
-	}
+  if (req.params.anand == "pankaj") {
+    let ab = [];
+    for (let a = 1; a < 10; a++) {
+      ab.push(req.params.anand);
+    }
+    res.json(ab);
+    res.end();
+  } else {
+    res.send(`Hello ${req.params.anand}!`);
+    res.end();
+  }
 });
 
 app.listen(app.get("port"), () => {
