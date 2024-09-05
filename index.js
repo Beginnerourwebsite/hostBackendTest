@@ -15,8 +15,16 @@ app.post("/", (req, res, next) => {
   res.end()
 })
 app.get("/:anand", (req, res, next) => {
-	res.send(`Hello ${req.params.anand}!`);
-	res.end()
+	if( req.params.anand=="pankaj"){
+
+		res.send(`Hello pagle u r mad!`);
+		res.end()
+	}
+	else{
+		res.send(`Hello ${req.params.anand}!`);
+		res.end()
+
+	}
 });
 
 app.listen(app.get("port"), () => {
