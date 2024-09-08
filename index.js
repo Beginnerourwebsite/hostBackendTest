@@ -6,14 +6,14 @@ app.use(express.json());
 app.use(cors());
 app.set("port", process.env.PORT || 5000);
 
-app.get("/", (req, res, next) => {
+app.get("/test", (req, res, next) => {
   res.send("<h1>Hello world<h1>");
 });
-app.post("/", (req, res, next) => {
+app.post("/test", (req, res, next) => {
   res.json({ data: req.body, message: "get successful" });
   res.end();
 });
-app.get("/:anand", (req, res, next) => {
+app.get("/test/:anand", (req, res, next) => {
   if (req.params.anand == "pankaj") {
     let ab = [];
     for (let a = 1; a < 10; a++) {
